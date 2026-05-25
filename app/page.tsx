@@ -7,6 +7,7 @@ interface Yacht {
   manufacturer: string;
   name: string;
   img: string;
+  interior: string;
   length: string;
   guests: number;
   cabins: number;
@@ -22,12 +23,12 @@ interface Availability {
 }
 
 const YACHTS: Yacht[] = [
-  { slug: "pink-panther", manufacturer: "Azimut", name: "60' \"Pink Panther\"", img: "/images/yacht-pink-cruising.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "pink" },
-  { slug: "blessed-gold", manufacturer: "Azimut", name: "60' \"Blessed Gold\"", img: "/images/yacht-front.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "gold" },
-  { slug: "cotton-candy", manufacturer: "Maxum", name: "50' \"Cotton Candy\"", img: "/images/yacht-pink-aerial.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
-  { slug: "bad-bunny", manufacturer: "Maxum", name: "50' \"Bad Bunny\"", img: "/images/yacht-pink-speed.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
-  { slug: "hello-kitty", manufacturer: "Maxum", name: "50' \"Hello Kitty\"", img: "/images/yacht-pink-skyline.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
-  { slug: "pink-leopard", manufacturer: "Meridian", name: "45' \"Pink Leopard\"", img: "/images/yacht-speed-2.jpg", length: "45 ft", guests: 8, cabins: 2, crew: 1, price: 900, tier: "pink" },
+  { slug: "pink-panther", manufacturer: "Azimut", name: "60' \"Pink Panther\"", img: "/images/01-ext.jpg", interior: "/images/10-int.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "pink" },
+  { slug: "blessed-gold", manufacturer: "Azimut", name: "60' \"Blessed Gold\"", img: "/images/02-ext.jpg", interior: "/images/11-int.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "gold" },
+  { slug: "cotton-candy", manufacturer: "Maxum", name: "50' \"Cotton Candy\"", img: "/images/03-ext.jpg", interior: "/images/12-int.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
+  { slug: "bad-bunny", manufacturer: "Maxum", name: "50' \"Bad Bunny\"", img: "/images/04-ext.jpg", interior: "/images/13-int.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
+  { slug: "hello-kitty", manufacturer: "Maxum", name: "50' \"Hello Kitty\"", img: "/images/05-ext.jpg", interior: "/images/14-int.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
+  { slug: "pink-leopard", manufacturer: "Meridian", name: "45' \"Pink Leopard\"", img: "/images/06-ext.jpg", interior: "/images/12-int.jpg", length: "45 ft", guests: 8, cabins: 2, crew: 1, price: 900, tier: "pink" },
 ];
 
 const TIERS: Record<string, string> = {
