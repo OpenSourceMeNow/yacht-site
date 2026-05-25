@@ -324,8 +324,36 @@ body::before {
 /* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
   .vehicle-grid { grid-template-columns: 1fr; }
-  .nav-links { gap: 16px; }
-  .site-header .brand { font-size: 24px; }
+
+  .site-header { padding: 10px 0; }
+  .site-header .brand { font-size: 20px; letter-spacing: 2px; }
+  .site-header .tagline { font-size: 9px; }
+
+  .nav-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .nav-inner { flex-direction: column; align-items: flex-start; height: auto; padding: 10px 16px; gap: 8px; }
+  .nav-links { gap: 14px; white-space: nowrap; font-size: 10px; }
+  .nav-links a { font-size: 10px; }
+  .nav-sort { font-size: 10px; gap: 6px; }
+  .nav-sort select { font-size: 10px; max-width: 160px; }
+
+  .hero-banner { padding: 18px 16px; }
+  .hero-banner h2 { font-size: 16px; letter-spacing: 1px; }
+  .hero-banner p { font-size: 10px; }
+
+  .main-container { padding: 20px 12px; }
+  .section-header { font-size: 14px; }
+  .vehicle-info { padding: 10px 12px; }
+  .vehicle-info h3 { font-size: 16px; }
+  .vehicle-info .manufacturer { font-size: 9px; }
+  .vehicle-specs { gap: 8px; font-size: 10px; flex-wrap: wrap; }
+  .vehicle-bottom { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .vehicle-bottom .price { font-size: 18px; }
+  .vehicle-bottom .buy-btn { width: 100%; text-align: center; padding: 10px; }
+
+  .vehicle-card.premium .vehicle-image::before {
+    top: 5px; right: -24px;
+    font-size: 7px; padding: 2px 24px;
+  }
 }
 
 /* ============ FADE IN ANIMATION ============ */
