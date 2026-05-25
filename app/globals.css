@@ -4,13 +4,15 @@
   --gta-bg: #0d0d14;
   --gta-card-bg: #1a1a25;
   --gta-white-bg: #e8e8e8;
-  --gta-green: #4caf50;
-  --gta-green-dark: #388e3c;
+  --gta-accent: #00a8cc;
+  --gta-accent-dark: #0088aa;
   --gta-text: #cccccc;
   --gta-text-dark: #222222;
   --gta-border: #2a2a35;
   --gta-header-font: 'Playfair Display', serif;
   --gta-body-font: 'Inter', sans-serif;
+  --available: #4caf50;
+  --booked: #e53935;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -210,6 +212,29 @@ body::before {
   z-index: 2;
 }
 
+/* Availability badge */
+.availability-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.availability-badge.available {
+  background: rgba(76, 175, 80, 0.9);
+  color: #fff;
+}
+
+.availability-badge.booked {
+  background: rgba(229, 57, 53, 0.9);
+  color: #fff;
+}
+
 /* Info section below image */
 .vehicle-info {
   padding: 14px 16px;
@@ -256,7 +281,7 @@ body::before {
 .vehicle-bottom .price {
   font-family: var(--gta-header-font);
   font-size: 22px;
-  color: var(--gta-green);
+  color: #4caf50;
   font-weight: 400;
 }
 
@@ -269,7 +294,7 @@ body::before {
 }
 
 .vehicle-bottom .buy-btn {
-  background: var(--gta-green-dark);
+  background: var(--gta-accent-dark);
   color: #fff;
   border: none;
   font-family: var(--gta-body-font);
@@ -283,7 +308,12 @@ body::before {
 }
 
 .vehicle-bottom .buy-btn:hover {
-  background: #43a047;
+  background: #0099bb;
+}
+
+.vehicle-bottom .buy-btn:focus-visible {
+  outline: 2px solid var(--gta-accent);
+  outline-offset: 2px;
 }
 
 /* ============ SECTION HEADERS ============ */
@@ -374,3 +404,17 @@ body::before {
 .vehicle-card:nth-child(9) { animation-delay: 0.45s; }
 .vehicle-card:nth-child(10) { animation-delay: 0.5s; }
 .vehicle-card:nth-child(n+11) { animation-delay: 0.55s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .vehicle-card {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.nav-links button:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gta-accent);
+  outline-offset: 2px;
+}

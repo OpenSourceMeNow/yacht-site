@@ -1,0 +1,222 @@
+{
+  "pink-panther": {
+    "total_bookings": 1,
+    "booked_today": false,
+    "today_bookings": [],
+    "next_booking": {
+      "start": "2026-06-03 20:00",
+      "end": "2026-06-03 23:55",
+      "summary": "Chris | 8-12 tie up pink panther owe $1\\,000"
+    },
+    "next_5": [
+      {
+        "start": "2026-06-03 20:00",
+        "end": "2026-06-03 23:55",
+        "summary": "Chris | 8-12 tie up pink panther owe $1\\,000"
+      }
+    ]
+  },
+  "blessed-gold": {
+    "total_bookings": 21,
+    "booked_today": true,
+    "today_bookings": [
+      {
+        "start": "2026-05-25 14:00",
+        "end": "2026-05-25 15:00",
+        "summary": "4:30/8:30 gold 200 pent 900 pink ocean"
+      }
+    ],
+    "next_booking": {
+      "start": "2026-05-25 14:00",
+      "end": "2026-05-25 15:00",
+      "summary": "4:30/8:30 gold 200 pent 900 pink ocean"
+    },
+    "next_5": [
+      {
+        "start": "2026-05-25 14:00",
+        "end": "2026-05-25 15:00",
+        "summary": "4:30/8:30 gold 200 pent 900 pink ocean"
+      },
+      {
+        "start": "2026-05-29 17:00",
+        "end": "2026-05-29 18:00",
+        "summary": "8pm/12 gold 300pent 800yacht 365"
+      },
+      {
+        "start": "2026-05-30 18:00",
+        "end": "2026-05-30 19:00",
+        "summary": "4/8 gold 200 pent 1000 livan"
+      },
+      {
+        "start": "2026-05-30 19:30",
+        "end": "2026-05-30 20:30",
+        "summary": "8pm/11 gold 250 pent 750 caliente"
+      },
+      {
+        "start": "2026-06-06 15:00",
+        "end": "2026-06-06 16:00",
+        "summary": "12/4 gold 200 dep pent 1000 Colonvia"
+      }
+    ]
+  },
+  "cotton-candy": {
+    "total_bookings": 14,
+    "booked_today": true,
+    "today_bookings": [
+      {
+        "start": "2026-05-25 17:00",
+        "end": "2026-05-25 20:00",
+        "summary": "Eli- 5pm-8pm Cotton candy J"
+      }
+    ],
+    "next_booking": {
+      "start": "2026-05-25 17:00",
+      "end": "2026-05-25 20:00",
+      "summary": "Eli- 5pm-8pm Cotton candy J"
+    },
+    "next_5": [
+      {
+        "start": "2026-05-25 17:00",
+        "end": "2026-05-25 20:00",
+        "summary": "Eli- 5pm-8pm Cotton candy J"
+      },
+      {
+        "start": "2026-05-29 17:00",
+        "end": "2026-05-29 21:00",
+        "summary": "Eli | 5pm-9pm Cotton Candy m"
+      },
+      {
+        "start": "2026-05-29 22:00",
+        "end": "2026-05-29 23:55",
+        "summary": "Eli | 10pm-2am Cotton Candy m"
+      },
+      {
+        "start": "2026-05-30 15:00",
+        "end": "2026-05-30 17:00",
+        "summary": "Eli | 3-5 Cotton candy m"
+      },
+      {
+        "start": "2026-05-30 17:00",
+        "end": "2026-05-30 19:00",
+        "summary": "Eli- 5pm-7pm cotton candy J"
+      }
+    ]
+  },
+  "bad-bunny": {
+    "total_bookings": 7,
+    "booked_today": false,
+    "today_bookings": [],
+    "next_booking": {
+      "start": "2026-05-30 11:00",
+      "end": "2026-05-30 13:00",
+      "summary": "Eli | 11am-1pm Bad Bunny m"
+    },
+    "next_5": [
+      {
+        "start": "2026-05-30 11:00",
+        "end": "2026-05-30 13:00",
+        "summary": "Eli | 11am-1pm Bad Bunny m"
+      },
+      {
+        "start": "2026-06-07 17:00",
+        "end": "2026-06-07 20:00",
+        "summary": "Eli | 5pm-8pm Bad Bunny m"
+      },
+      {
+        "start": "2026-06-20 12:00",
+        "end": "2026-06-20 16:00",
+        "summary": "Eli | 12pm-4pm Bad Bunny m"
+      },
+      {
+        "start": "2026-06-20 16:00",
+        "end": "2026-06-20 20:00",
+        "summary": "Eli | 4pm-8pm Bad Bunny m"
+      },
+      {
+        "start": "2026-06-28 17:00",
+        "end": "2026-06-28 19:00",
+        "summary": "Eli | 5pm-7pm Bad Bunny m"
+      }
+    ]
+  },
+  "hello-kitty": {
+    "total_bookings": 19,
+    "booked_today": true,
+    "today_bookings": [
+      {
+        "start": "2026-05-25 12:00",
+        "end": "2026-05-25 14:00",
+        "summary": "Eli | 12pm-2pm Hello Kitty m"
+      }
+    ],
+    "next_booking": {
+      "start": "2026-05-25 12:00",
+      "end": "2026-05-25 14:00",
+      "summary": "Eli | 12pm-2pm Hello Kitty m"
+    },
+    "next_5": [
+      {
+        "start": "2026-05-25 12:00",
+        "end": "2026-05-25 14:00",
+        "summary": "Eli | 12pm-2pm Hello Kitty m"
+      },
+      {
+        "start": "2026-05-29 16:00",
+        "end": "2026-05-29 18:00",
+        "summary": "Eli | 4pm-6pm Hello Kitty m"
+      },
+      {
+        "start": "2026-05-30 12:00",
+        "end": "2026-05-30 14:00",
+        "summary": "Eli | 12pm-2pm Hello Kitty m"
+      },
+      {
+        "start": "2026-05-30 16:00",
+        "end": "2026-05-30 20:00",
+        "summary": "Eli | 4pm-8pm hello kitty m"
+      },
+      {
+        "start": "2026-06-05 12:00",
+        "end": "2026-06-05 16:00",
+        "summary": "Eli | 12pm-4pm Hello Kitty m"
+      }
+    ]
+  },
+  "pink-leopard": {
+    "total_bookings": 15,
+    "booked_today": false,
+    "today_bookings": [],
+    "next_booking": {
+      "start": "2026-05-28 17:00",
+      "end": "2026-05-28 20:00",
+      "summary": "Eli | 5pm-8pm Meridian m"
+    },
+    "next_5": [
+      {
+        "start": "2026-05-28 17:00",
+        "end": "2026-05-28 20:00",
+        "summary": "Eli | 5pm-8pm Meridian m"
+      },
+      {
+        "start": "2026-05-30 13:00",
+        "end": "2026-05-30 16:00",
+        "summary": "Eli | 1pm-4pm Meridian m"
+      },
+      {
+        "start": "2026-05-30 16:00",
+        "end": "2026-05-30 20:00",
+        "summary": "Eli | 4pm-8pm Meridian m"
+      },
+      {
+        "start": "2026-05-31 20:00",
+        "end": "2026-05-31 23:00",
+        "summary": "Eli | 8pm-11pm Meridian m"
+      },
+      {
+        "start": "2026-06-04 17:00",
+        "end": "2026-06-04 20:00",
+        "summary": "Eli | 5pm-8pm Meridian m"
+      }
+    ]
+  }
+}
