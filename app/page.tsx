@@ -19,12 +19,12 @@ export default function Home() {
   const [filter, setFilter] = useState("all");
 
   const yachts: Yacht[] = [
-    { manufacturer: "Azimut", name: "60' \"Pink Panther\"", img: "/images/pink-panther-60.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "pink" },
-    { manufacturer: "Azimut", name: "60' \"Blessed Gold\"", img: "/images/blessed-gold-60.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "gold" },
-    { manufacturer: "Maxum", name: "50' \"Cotton Candy\"", img: "/images/cotton-candy-50.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
-    { manufacturer: "Maxum", name: "50' \"Bad Bunny\"", img: "/images/pink-ii-50.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
-    { manufacturer: "Maxum", name: "50' \"Hello Kitty\"", img: "/images/pink-iii-50.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
-    { manufacturer: "Meridian", name: "45' \"Pink Leopard\"", img: "/images/pink-i-45.jpg", length: "45 ft", guests: 8, cabins: 2, crew: 1, price: 900, tier: "pink" },
+    { manufacturer: "Azimut", name: "60' \"Pink Panther\"", img: "/images/yacht-pink-cruising.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "pink" },
+    { manufacturer: "Azimut", name: "60' \"Blessed Gold\"", img: "/images/yacht-front.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "gold" },
+    { manufacturer: "Maxum", name: "50' \"Cotton Candy\"", img: "/images/yacht-pink-aerial.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
+    { manufacturer: "Maxum", name: "50' \"Bad Bunny\"", img: "/images/yacht-pink-speed.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
+    { manufacturer: "Maxum", name: "50' \"Hello Kitty\"", img: "/images/yacht-pink-skyline.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
+    { manufacturer: "Meridian", name: "45' \"Pink Leopard\"", img: "/images/yacht-speed-2.jpg", length: "45 ft", guests: 8, cabins: 2, crew: 1, price: 900, tier: "pink" },
   ];
 
   const tiers: Record<string, string> = {
