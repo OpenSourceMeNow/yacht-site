@@ -19,33 +19,17 @@ export default function Home() {
   const [filter, setFilter] = useState("all");
 
   const yachts: Yacht[] = [
-    { manufacturer: "Pershing", name: "116' GTX \"Black Diamond\"", img: "/images/pershing-116.jpg", length: "116 ft", guests: 14, cabins: 5, crew: 5, price: 12000, tier: "mega" },
-    { manufacturer: "Leopard", name: "105' \"Predator\"", img: "/images/princess-100.jpg", length: "105 ft", guests: 13, cabins: 5, crew: 4, price: 9500, tier: "mega" },
-    { manufacturer: "Princess", name: "100' \"Monopoly\"", img: "/images/princess-100.jpg", length: "100 ft", guests: 12, cabins: 5, crew: 4, price: 8000, tier: "mega" },
-    { manufacturer: "Sunseeker", name: "96' \"Neptune\"", img: "/images/sunseeker-96.jpg", length: "96 ft", guests: 12, cabins: 4, crew: 4, price: 6500, tier: "mega" },
-    { manufacturer: "Princess", name: "88' \"Freedom\"", img: "/images/hero-yacht.jpg", length: "88 ft", guests: 13, cabins: 4, crew: 3, price: 4500, tier: "large" },
-    { manufacturer: "Sirena", name: "88' \"Voyager\"", img: "/images/yacht-sirena.jpg", length: "88 ft", guests: 12, cabins: 4, crew: 3, price: 4200, tier: "large" },
-    { manufacturer: "Mangusta", name: "85' \"Velocé\"", img: "/images/pershing-116.jpg", length: "85 ft", guests: 10, cabins: 4, crew: 3, price: 5000, tier: "large" },
-    { manufacturer: "Sunseeker", name: "82' \"Ocean Dream\"", img: "/images/sunseeker-82.jpg", length: "82 ft", guests: 10, cabins: 4, crew: 3, price: 4000, tier: "large" },
-    { manufacturer: "Azimut", name: "80' \"Salt Shaker\"", img: "/images/azimut-80.jpg", length: "80 ft", guests: 10, cabins: 4, crew: 3, price: 3800, tier: "large" },
-    { manufacturer: "Miami Sol", name: "80' \"High Tide\"", img: "/images/miami-sol-80.jpg", length: "80 ft", guests: 10, cabins: 3, crew: 3, price: 3500, tier: "large" },
-    { manufacturer: "Lazzara", name: "75' \"Lady H\"", img: "/images/sunseeker-96.jpg", length: "75 ft", guests: 8, cabins: 3, crew: 2, price: 3200, tier: "large" },
-    { manufacturer: "Sunseeker", name: "70' \"Horizon\"", img: "/images/gig-g70.jpg", length: "70 ft", guests: 8, cabins: 3, crew: 2, price: 2800, tier: "mid" },
-    { manufacturer: "Riva", name: "68' \"Dolce\"", img: "/images/sunseeker-96.jpg", length: "68 ft", guests: 8, cabins: 3, crew: 2, price: 2600, tier: "mid" },
-    { manufacturer: "Ferretti", name: "65' \"La Bella\"", img: "/images/sunseeker-82.jpg", length: "65 ft", guests: 8, cabins: 3, crew: 2, price: 2200, tier: "mid" },
-    { manufacturer: "Princess", name: "62' \"Royal Wave\"", img: "/images/hero-yacht.jpg", length: "62 ft", guests: 8, cabins: 2, crew: 2, price: 1950, tier: "mid" },
-    { manufacturer: "Azimut", name: "60' \"Wine Down\"", img: "/images/yacht-azimut.jpg", length: "60 ft", guests: 8, cabins: 2, crew: 2, price: 1800, tier: "mid" },
-    { manufacturer: "Hatteras", name: "58' \"Big Game\"", img: "/images/miami-sol-80.jpg", length: "58 ft", guests: 6, cabins: 2, crew: 2, price: 1500, tier: "mid" },
-    { manufacturer: "Galeon", name: "55' \"Infinity\"", img: "/images/interior-lounge.jpg", length: "55 ft", guests: 6, cabins: 2, crew: 1, price: 950, tier: "small" },
-    { manufacturer: "Azimut", name: "50' \"Dolce Vita\"", img: "/images/yacht-azimut.jpg", length: "50 ft", guests: 6, cabins: 2, crew: 1, price: 850, tier: "small" },
-    { manufacturer: "Sea Ray", name: "45' \"Sun Chaser\"", img: "/images/miami-vip.jpg", length: "45 ft", guests: 4, cabins: 1, crew: 1, price: 650, tier: "small" },
+    { manufacturer: "Azimut", name: "60' \"Pink Panther\"", img: "/images/pink-panther-60.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "pink" },
+    { manufacturer: "Azimut", name: "60' \"Blessed Gold\"", img: "/images/blessed-gold-60.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "gold" },
+    { manufacturer: "Maxum", name: "50' \"Cotton Candy\"", img: "/images/cotton-candy-50.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
+    { manufacturer: "Maxum", name: "50' \"Bad Bunny\"", img: "/images/pink-ii-50.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
+    { manufacturer: "Maxum", name: "50' \"Hello Kitty\"", img: "/images/pink-iii-50.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink" },
+    { manufacturer: "Meridian", name: "45' \"Pink Leopard\"", img: "/images/pink-i-45.jpg", length: "45 ft", guests: 8, cabins: 2, crew: 1, price: 900, tier: "pink" },
   ];
 
   const tiers: Record<string, string> = {
-    mega: "MEGA YACHTS — 91′+",
-    large: "LARGE YACHTS — 71′–90′",
-    mid: "MID-SIZE — 56′–70′",
-    small: "EXPRESS — 40′–55′",
+    pink: "PINK COLLECTION",
+    gold: "GOLD COLLECTION",
   };
 
   let filtered = filter === "all" ? yachts : yachts.filter(y => y.tier === filter);
@@ -61,23 +45,21 @@ export default function Home() {
     return acc;
   }, {});
 
-  const tierOrder = ["mega", "large", "mid", "small"];
+  const tierOrder = ["pink", "gold"];
 
   return (
     <main>
-      {/* Header */}
       <header className="site-header">
         <div className="brand">DOCKTEASE MIAMI</div>
-        <div className="tagline">Luxury Watercraft — Buy A Boat Today</div>
+        <div className="tagline">Luxury Watercraft — Original Pink Yacht Experience</div>
       </header>
 
-      {/* Nav / Sort Bar */}
       <nav className="nav-bar">
         <div className="nav-inner">
           <div className="nav-links">
-            {["all", "mega", "large", "mid", "small"].map(t =>
+            {["all", "pink", "gold"].map(t =>
               <a key={t} className={filter === t ? "active" : ""} onClick={() => setFilter(t)} style={{cursor:"pointer"}}>
-                {t === "all" ? "ALL" : t.toUpperCase()}
+                {t === "all" ? "ALL" : t === "pink" ? "PINK COLLECTION" : "GOLD COLLECTION"}
               </a>
             )}
           </div>
@@ -93,13 +75,11 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Tagline */}
       <div className="hero-banner">
         <h2>Give The Global Recession The Finger</h2>
-        <p>The boat of your dreams is just one click away</p>
+        <p>Pink yachts. Gold yachts. The boat of your dreams is one click away.</p>
       </div>
 
-      {/* Vehicle Grid */}
       <div className="main-container">
         {tierOrder.map(tier => {
           const yachts = grouped[tier];
@@ -111,7 +91,7 @@ export default function Home() {
               </div>
               <div className="vehicle-grid">
                 {yachts.map((yacht, i) => (
-                  <div key={i} className={`vehicle-card ${yacht.price >= 4000 ? "premium" : ""}`}>
+                  <div key={i} className="vehicle-card premium">
                     <div className="vehicle-image">
                       <img src={yacht.img} alt={yacht.name} loading="lazy" />
                     </div>
@@ -139,9 +119,8 @@ export default function Home() {
         })}
       </div>
 
-      {/* Footer */}
       <footer className="site-footer">
-        <p>© 2026 DOCKTEASE MIAMI — LICENSED & INSURED. WE DELIVER TO YOU.</p>
+        <p>© 2026 DOCKTEASE MIAMI — ORIGINAL PINK YACHT EXPERIENCE. WE DELIVER TO YOU.</p>
       </footer>
     </main>
   );
