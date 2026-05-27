@@ -2,17 +2,27 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'DockTease Miami — Luxury Yacht Rentals',
-  description: 'Original pink yacht experience in Miami. 6 luxury yachts with real-time availability. Pink Panther, Cotton Candy, Bad Bunny, Hello Kitty, Pink Leopard, Blessed Gold.',
+  title: {
+    default: 'DockTease Miami — Luxury Pink Yacht Rentals',
+    template: '%s — DockTease Miami',
+  },
+  description: 'Miami\'s original pink yacht experience. 6 luxury yachts from 45-60ft with real-time availability. USCG licensed captains. Book directly — no brokers, no hidden fees.',
+  keywords: ['yacht rental Miami', 'pink yacht Miami', 'boat rental Miami', 'yacht charter Miami', 'party boat Miami', 'DockTease Miami'],
   openGraph: {
-    title: 'DockTease Miami — Luxury Yacht Rentals',
-    description: 'Original pink yacht experience in Miami. Book directly with real-time availability.',
+    title: 'DockTease Miami — Luxury Pink Yacht Rentals',
+    description: 'Miami\'s original pink yacht experience. 6 yachts, real-time availability, book directly.',
     type: 'website',
+    siteName: 'DockTease Miami',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DockTease Miami — Luxury Yacht Rentals',
-    description: 'Original pink yacht experience in Miami.',
+    title: 'DockTease Miami — Luxury Pink Yacht Rentals',
+    description: 'Miami\'s original pink yacht experience.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
