@@ -3,22 +3,22 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'DockTease Miami — Luxury Pink Yacht Rentals',
-    template: '%s — DockTease Miami',
+    default: '305 Yacht Charters — Miami Luxury Yacht Rentals',
+    template: '%s — 305 Yacht Charters',
   },
-  description: 'Miami\'s original pink yacht experience. 6 luxury yachts from 45-60ft with real-time availability. USCG licensed captains. Book directly — no brokers, no hidden fees.',
-  keywords: ['yacht rental Miami', 'pink yacht Miami', 'boat rental Miami', 'yacht charter Miami', 'party boat Miami', 'DockTease Miami'],
+  description: 'Miami\'s premier yacht charter experience. 5 luxury yachts from 40-55ft with real-time availability. USCG licensed captains. Book directly — no brokers, no hidden fees.',
+  keywords: ['yacht rental Miami', 'boat rental Miami', 'yacht charter Miami', 'party boat Miami', '305 Yacht Charters', 'Miami yacht'],
   openGraph: {
-    title: 'DockTease Miami — Luxury Pink Yacht Rentals',
-    description: 'Miami\'s original pink yacht experience. 6 yachts, real-time availability, book directly.',
+    title: '305 Yacht Charters — Miami Luxury Yacht Rentals',
+    description: '5 luxury yachts, real-time availability, book directly with USCG licensed captains.',
     type: 'website',
-    siteName: 'DockTease Miami',
+    siteName: '305 Yacht Charters',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DockTease Miami — Luxury Pink Yacht Rentals',
-    description: 'Miami\'s original pink yacht experience.',
+    title: '305 Yacht Charters — Miami Luxury Yacht Rentals',
+    description: 'Miami\'s premier yacht charter experience.',
   },
   robots: {
     index: true,

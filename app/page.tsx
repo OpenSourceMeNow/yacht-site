@@ -24,35 +24,33 @@ interface Availability {
 }
 
 const YACHTS: Yacht[] = [
-  { slug: "pink-panther", manufacturer: "Azimut", name: "60' \"Pink Panther\"", img: "/images/yacht-01.jpg", interior: "/images/yacht-09.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "pink", desc: "Our flagship. 3 cabins, massive deck, premium sound." },
-  { slug: "blessed-gold", manufacturer: "Azimut", name: "60' \"Blessed Gold\"", img: "/images/yacht-02.jpg", interior: "/images/yacht-04.jpg", length: "60 ft", guests: 12, cabins: 3, crew: 2, price: 1800, tier: "gold", desc: "Gold edition 60-footer. Three cabins, smoothest ride on the bay." },
-  { slug: "cotton-candy", manufacturer: "Maxum", name: "50' \"Cotton Candy\"", img: "/images/yacht-03.jpg", interior: "/images/yacht-07.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink", desc: "Our most Instagram-famous yacht. Massive sun deck, 2 cabins." },
-  { slug: "bad-bunny", manufacturer: "Maxum", name: "50' \"Bad Bunny\"", img: "/images/yacht-05.jpg", interior: "/images/yacht-08.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink", desc: "Reggaeton vibes. Powerful sound system, party-ready layout." },
-  { slug: "hello-kitty", manufacturer: "Maxum", name: "50' \"Hello Kitty\"", img: "/images/yacht-08.jpg", interior: "/images/yacht-10.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1200, tier: "pink", desc: "Playful 50-footer. Daytime cruises and birthday parties." },
-  { slug: "pink-leopard", manufacturer: "Meridian", name: "45' \"Pink Leopard\"", img: "/images/yacht-06.jpg", interior: "/images/yacht-09.jpg", length: "45 ft", guests: 8, cabins: 2, crew: 1, price: 900, tier: "pink", desc: "Intimate 45-footer. Perfect for smaller groups and sunset cruises." },
+  { slug: "bad-bunny", manufacturer: "Maxum", name: "\"Bad Bunny\"", img: "/images/yacht-01.jpg", interior: "/images/yacht-09.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1100, tier: "standard", desc: "Our most popular yacht. Pink-themed 50-footer that's been the backdrop for countless Miami memories." },
+  { slug: "ace-of-spades", manufacturer: "Maxum", name: "\"Ace of Spades\"", img: "/images/yacht-02.jpg", interior: "/images/yacht-04.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1100, tier: "standard", desc: "Sleek black-and-gold 50-footer. Powerful sound system, spacious deck, built for good times." },
+  { slug: "hello-kitty", manufacturer: "Maxum", name: "\"Hello Kitty\"", img: "/images/yacht-03.jpg", interior: "/images/yacht-07.jpg", length: "50 ft", guests: 10, cabins: 2, crew: 2, price: 1100, tier: "standard", desc: "The fun one. 50-foot Maxum that's perfect for birthdays, daytime cruises, and anyone who loves a good time." },
+  { slug: "blessed-gold", manufacturer: "Azimut", name: "\"Blessed Gold\"", img: "/images/yacht-05.jpg", interior: "/images/yacht-08.jpg", length: "55 ft", guests: 12, cabins: 3, crew: 2, price: 1500, tier: "premium", desc: "Our premium 55-foot Azimut. Three cabins, expansive entertaining space, and the smoothest ride on Biscayne Bay." },
+  { slug: "meridian", manufacturer: "Meridian", name: "\"Meridian\"", img: "/images/yacht-06.jpg", interior: "/images/yacht-10.jpg", length: "40 ft", guests: 8, cabins: 1, crew: 1, price: 900, tier: "standard", desc: "Our most accessible yacht. Perfect for intimate gatherings, sunset cruises, and smaller groups." },
 ];
 
 const TIERS: Record<string, string> = {
-  pink: "PINK COLLECTION",
-  gold: "GOLD COLLECTION",
+  standard: "OUR FLEET",
+  premium: "PREMIUM",
 };
 
 const TRUST_BAR = [
   { icon: "📋", label: "USCG Licensed", desc: "All captains certified" },
-  { icon: "🛥️", label: "6 Yachts", desc: "Largest pink fleet in Miami" },
+  { icon: "🛥️", label: "5 Yachts", desc: "Miami's premier charter fleet" },
   { icon: "⭐", label: "5-Star Rated", desc: "Hundreds of happy guests" },
   { icon: "🔒", label: "Secure Booking", desc: "Stripe payments, no hidden fees" },
 ];
 
 const TESTIMONIALS = [
-  { text: "Best bachelorette ever. The pink yacht was EXACTLY what we wanted. Captain was amazing and the whole experience was seamless.", author: "Jessica M.", rating: 5 },
-  { text: "Booked Pink Panther for my 30th. 12 of us had the time of our lives. Already planning the next trip.", author: "Marcus D.", rating: 5 },
+  { text: "Best bachelorette ever. The yacht was EXACTLY what we wanted. Captain was amazing and the whole experience was seamless.", author: "Jessica M.", rating: 5 },
+  { text: "Booked Blessed Gold for my 30th. 12 of us had the time of our lives. Already planning the next trip.", author: "Marcus D.", rating: 5 },
   { text: "No bait and switch like other companies. The yacht looked exactly like the photos. Professional crew, great vibes.", author: "Sarah K.", rating: 5 },
 ];
 
 export default function Home() {
   const [sort, setSort] = useState("price-desc");
-  const [filter, setFilter] = useState("all");
   const [availability, setAvailability] = useState<Record<string, Availability>>({});
 
   useEffect(() => {
@@ -63,13 +61,13 @@ export default function Home() {
   }, []);
 
   const filtered = useMemo(() => {
-    let list = filter === "all" ? YACHTS : YACHTS.filter(y => y.tier === filter);
+    let list = [...YACHTS];
     if (sort === "price-asc") list = [...list].sort((a, b) => a.price - b.price);
     else if (sort === "price-desc") list = [...list].sort((a, b) => b.price - a.price);
     else if (sort === "length-desc") list = [...list].sort((a, b) => parseInt(b.length) - parseInt(a.length));
     else if (sort === "name") list = [...list].sort((a, b) => a.name.localeCompare(b.name));
     return list;
-  }, [sort, filter]);
+  }, [sort]);
 
   const grouped = useMemo(() => {
     const g: Record<string, Yacht[]> = {};
@@ -83,26 +81,13 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <div className="brand">DOCKTEASE MIAMI</div>
-        <div className="tagline">Luxury Watercraft — Original Pink Yacht Experience</div>
+        <div className="brand">305 YACHT CHARTERS</div>
+        <div className="tagline">Miami's Premier Yacht Experience — Book Direct</div>
       </header>
 
-      {/* Navigation with page links */}
       <nav className="nav-bar" role="navigation" aria-label="Main navigation">
         <div className="nav-inner">
-          <div className="nav-links" style={{ gap: 0 }}>
-            {["all", "pink", "gold"].map(t => (
-              <button
-                key={t}
-                className={filter === t ? "active" : ""}
-                onClick={() => setFilter(t)}
-                aria-pressed={filter === t}
-              >
-                {t === "all" ? "ALL" : t === "pink" ? "PINK COLLECTION" : "GOLD COLLECTION"}
-              </button>
-            ))}
-          </div>
-          <div className="nav-sort">
+          <div className="nav-sort" style={{ marginLeft: 'auto' }}>
             <label htmlFor="sort-select">SORT BY</label>
             <select id="sort-select" value={sort} onChange={e => setSort(e.target.value)} aria-label="Sort yachts">
               <option value="price-desc">PRICE: HIGH TO LOW</option>
@@ -114,10 +99,10 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Page Links Bar */}
+      {/* Page Links */}
       <div style={{ background: '#0a0a0a', borderBottom: '1px solid #1a1a1a', padding: '0 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', gap: 24, overflowX: 'auto', padding: '10px 0' }}>
-          <a href="/" style={{ color: '#f472b6', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, whiteSpace: 'nowrap' }}>HOME</a>
+          <a href="/" style={{ color: '#1a9cd9', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, whiteSpace: 'nowrap' }}>HOME</a>
           <a href="/fleet" style={{ color: '#999', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, whiteSpace: 'nowrap' }}>FLEET</a>
           <a href="/about" style={{ color: '#999', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, whiteSpace: 'nowrap' }}>ABOUT</a>
           <a href="/faq" style={{ color: '#999', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, whiteSpace: 'nowrap' }}>FAQ</a>
@@ -126,8 +111,8 @@ export default function Home() {
       </div>
 
       <div className="hero-banner">
-        <h2>Give The Global Recession The Finger</h2>
-        <p>Pink yachts. Gold yachts. Real-time availability. Book directly.</p>
+        <h2>Miami Yacht Charters — Starting at $900</h2>
+        <p>5 luxury yachts. USCG licensed captains. Book directly with real-time availability.</p>
       </div>
 
       {/* Trust Bar */}
@@ -169,10 +154,9 @@ export default function Home() {
                         )}
                       </div>
                       <div className="vehicle-info">
-                        <div className="manufacturer">{yacht.manufacturer}</div>
+                        <div className="manufacturer">{yacht.manufacturer} {yacht.length}</div>
                         <h3>{yacht.name}</h3>
                         <div className="vehicle-specs">
-                          <span aria-label={`Length: ${yacht.length}`}>📏 {yacht.length}</span>
                           <span aria-label={`Capacity: ${yacht.guests} guests`}>👥 {yacht.guests} guests</span>
                           <span aria-label={`${yacht.cabins} cabins`}>🛏 {yacht.cabins} cabins</span>
                           <span aria-label={`${yacht.crew} crew members`}>⚓ {yacht.crew} crew</span>
@@ -202,7 +186,7 @@ export default function Home() {
             <div key={i} style={{ background: '#111', border: '1px solid #222', borderRadius: 12, padding: 24 }}>
               <div style={{ color: '#fbbf24', fontSize: '1.2rem', marginBottom: 12 }}>{'★'.repeat(t.rating)}</div>
               <p style={{ color: '#ccc', lineHeight: 1.7, fontSize: '0.95rem', fontStyle: 'italic', marginBottom: 16 }}>"{t.text}"</p>
-              <div style={{ color: '#f472b6', fontWeight: 600, fontSize: '0.9rem' }}>— {t.author}</div>
+              <div style={{ color: '#1a9cd9', fontWeight: 600, fontSize: '0.9rem' }}>— {t.author}</div>
             </div>
           ))}
         </div>
@@ -212,14 +196,14 @@ export default function Home() {
       <section style={{ textAlign: 'center', padding: '60px 24px', background: '#111', borderTop: '1px solid #1a1a1a', borderBottom: '1px solid #1a1a1a' }}>
         <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: 12 }}>Ready to Get on the Water?</h2>
         <p style={{ color: '#999', fontSize: '1.1rem', marginBottom: 24 }}>Check availability and book your yacht in minutes.</p>
-        <a href="/contact" style={{ display: 'inline-block', padding: '16px 48px', background: '#f472b6', color: '#111', fontWeight: 700, fontSize: '1.1rem', borderRadius: 8, textDecoration: 'none' }}>Book Now</a>
+        <a href="/contact" style={{ display: 'inline-block', padding: '16px 48px', background: '#1a9cd9', color: '#fff', fontWeight: 700, fontSize: '1.1rem', borderRadius: 8, textDecoration: 'none' }}>Book Now</a>
       </section>
 
       <footer className="site-footer" style={{ padding: '40px 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: 32 }}>
           <div>
-            <div style={{ fontWeight: 800, fontSize: '1.1rem', marginBottom: 8 }}>DOCKTEASE MIAMI</div>
-            <p style={{ color: '#666', fontSize: '0.9rem', maxWidth: 300 }}>Original pink yacht experience. Luxury charters in Miami since 2020.</p>
+            <div style={{ fontWeight: 800, fontSize: '1.1rem', marginBottom: 8 }}>305 YACHT CHARTERS</div>
+            <p style={{ color: '#666', fontSize: '0.9rem', maxWidth: 300 }}>Miami's premier yacht charter experience. 5 luxury vessels, USCG licensed captains, direct booking.</p>
           </div>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             <a href="/about" style={{ color: '#666', textDecoration: 'none', fontSize: '0.9rem' }}>About</a>
@@ -231,7 +215,7 @@ export default function Home() {
           </div>
         </div>
         <div style={{ textAlign: 'center', color: '#444', fontSize: '0.85rem', marginTop: 24, paddingTop: 24, borderTop: '1px solid #1a1a1a', maxWidth: 1100, margin: '24px auto 0' }}>
-          © 2026 DOCKTEASE MIAMI — ORIGINAL PINK YACHT EXPERIENCE. ALL RIGHTS RESERVED.
+          © 2026 305 YACHT CHARTERS. ALL RIGHTS RESERVED.
         </div>
       </footer>
     </main>
